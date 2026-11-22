@@ -1,5 +1,6 @@
 const fs = require("node:fs"), path = require("node:path");
-const IN = process.argv[2] || "/input", OUT = process.argv[3] || "/output";
+const IN = process.env.MAKEFUN_INPUT_DIR || process.argv[2] || "/input",
+  OUT = process.env.MAKEFUN_OUTPUT_DIR || process.argv[3] || "/output";
 
 // Tiny stack VM, ISA v1. 32-bit wrapping ints, 256-value stack,
 // 64-entry call stack, 256 words of memory, traps 2..11.
